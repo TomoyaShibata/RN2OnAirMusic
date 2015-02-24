@@ -20,15 +20,15 @@ namespace Rn2OnAirMucicList.Models {
 			var feeds = new List<String>();
 			using (XmlReader xmlReader = XmlReader.Create(Const.RN2Site.FEED_URI)) {
 				var feed = SyndicationFeed.Load(xmlReader);
-				var feedText = new List<String>();
+				var feedTexts = new List<String>();
 				foreach (SyndicationItem item in feed.Items) {
-					feedText.Add(item.Summary.Text);
+					feedTexts.Add(item.Summary.Text);
 				}
 
 				var delimiter = new String[]{"<br />"};
-				feedText.ForEach(text => {
-					var l = text.Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
-					Debug.WriteLine(string.Join("", l));
+				feedTexts.ForEach(t => {
+					var l = t.Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
+					Debug.WriteLine(string.Join("", t));
 				});
 
 				return feed;
