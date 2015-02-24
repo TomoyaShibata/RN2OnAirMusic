@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rn2OnAirMucicList", "Rn2OnAirMucicList\Rn2OnAirMucicList.csproj", "{C51AFE80-F8A2-4BBD-BE95-5E75539C093B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rn2OnAirMusicListTest", "Rn2OnAirMusicListTest\Rn2OnAirMusicListTest.csproj", "{9C0DCAD8-8E77-4C07-8FED-5B12467A1D79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C51AFE80-F8A2-4BBD-BE95-5E75539C093B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51AFE80-F8A2-4BBD-BE95-5E75539C093B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51AFE80-F8A2-4BBD-BE95-5E75539C093B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51AFE80-F8A2-4BBD-BE95-5E75539C093B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0DCAD8-8E77-4C07-8FED-5B12467A1D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0DCAD8-8E77-4C07-8FED-5B12467A1D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0DCAD8-8E77-4C07-8FED-5B12467A1D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0DCAD8-8E77-4C07-8FED-5B12467A1D79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
