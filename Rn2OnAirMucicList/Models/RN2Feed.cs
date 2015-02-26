@@ -13,9 +13,9 @@ namespace Rn2OnAirMucicList.Models {
 		}
 
 		/// <summary>
-		/// RN2のフィードを取得する
+		/// RN2 のフィードを取得する
 		/// </summary>
-		/// <returns>RN2フィード</returns>
+		/// <returns>RN2 フィード</returns>
 		public SyndicationFeed GetFeed() {
 			var feeds = new List<String>();
 			using (XmlReader xmlReader = XmlReader.Create(Const.RN2Site.FEED_URI)) {
