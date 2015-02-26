@@ -19,20 +19,40 @@ namespace Rn2OnAirMucicList.Models {
 		public SyndicationFeed GetFeed() {
 			var feeds = new List<String>();
 			using (XmlReader xmlReader = XmlReader.Create(Const.RN2Site.FEED_URI)) {
-				var feed = SyndicationFeed.Load(xmlReader);
-				var feedText = new List<String>();
+				var feed      = SyndicationFeed.Load(xmlReader);
+				var feedTexts = new List<String>();
 				foreach (SyndicationItem item in feed.Items) {
-					feedText.Add(item.Summary.Text);
+					feedTexts.Add(item.Summary.Text);
 				}
 
 				var delimiter = new String[]{"<br />"};
-				feedText.ForEach(text => {
-					var l = text.Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
-					Debug.WriteLine(string.Join("", l));
+				feedTexts.ForEach(t => {
+					var l = t.Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
+					Debug.WriteLine(IsOnairTimeText(t));
+					Debug.WriteLine(IsMucicInfoText(t));
+					Debug.WriteLine(string.Join("", t));
 				});
 
 				return feed;
 			}
+		}
+
+		/// <summary>
+		/// 値が RN2 オンエア楽曲フィード本文の時間部かどうかチェックする
+		/// </summary>
+		/// <param name="text">フィードから抽出した1行</param>
+		/// <returns></returns>
+		private bool IsOnairTimeText(String text) {
+			return Const.RN2Site.ONAIR_TIME_RGX.IsMatch(text);
+		}
+
+		/// <summary>
+		/// 値が RN2 オンエア楽曲フィード本文の曲タイトル/アーティスト部かどうかチェックする
+		/// </summary>
+		/// <param name="text">フィードから抽出した1行</param>
+		/// <returns></returns>
+		private bool IsMucicInfoText(String text) {
+			return text.Contains(Const.RN2Site.MUSIC_INFO_DELIMITER);
 		}
 	}
 }
