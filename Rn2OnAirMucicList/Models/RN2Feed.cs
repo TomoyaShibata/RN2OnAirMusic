@@ -5,6 +5,7 @@ using System.Web;
 using System.Xml;
 using System.ServiceModel.Syndication;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace Rn2OnAirMucicList.Models {
 	public class RN2Feed {
@@ -13,9 +14,9 @@ namespace Rn2OnAirMucicList.Models {
 		}
 
 		/// <summary>
-		/// RN2のフィードを取得する
+		/// RN2 のフィードを取得する
 		/// </summary>
-		/// <returns>RN2フィード</returns>
+		/// <returns>RN2 フィード</returns>
 		public SyndicationFeed GetFeed() {
 			var feeds = new List<String>();
 			using (XmlReader xmlReader = XmlReader.Create(Const.RN2Site.FEED_URI)) {
@@ -43,7 +44,7 @@ namespace Rn2OnAirMucicList.Models {
 		/// <param name="text">フィードから抽出した1行</param>
 		/// <returns></returns>
 		private bool IsOnairTimeText(String text) {
-			return Const.RN2Site.ONAIR_TIME_RGX.IsMatch(text);
+			return new Regex(Const.RN2Site.REGEX_STR_ONAIR_TIME).IsMatch(text);
 		}
 
 		/// <summary>
