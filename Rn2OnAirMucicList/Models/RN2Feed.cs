@@ -5,6 +5,7 @@ using System.Web;
 using System.Xml;
 using System.ServiceModel.Syndication;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace Rn2OnAirMucicList.Models {
 	public class RN2Feed {
@@ -43,7 +44,7 @@ namespace Rn2OnAirMucicList.Models {
 		/// <param name="text">フィードから抽出した1行</param>
 		/// <returns></returns>
 		private bool IsOnairTimeText(String text) {
-			return Const.RN2Site.ONAIR_TIME_RGX.IsMatch(text);
+			return new Regex(Const.RN2Site.REGEX_STR_ONAIR_TIME).IsMatch(text);
 		}
 
 		/// <summary>
