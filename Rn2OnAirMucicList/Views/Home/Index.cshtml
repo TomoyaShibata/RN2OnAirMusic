@@ -8,3 +8,10 @@
 <section id="past-onair">
 	<h2>Past OnAir List</h2>
 </section>
+<section id="feed">
+	@if (ViewData["feeds"] != null) {
+		foreach (var f in (List<String>)ViewData["feeds"]) {
+			<p>@f</p>
+		}
+	}
+</section>

@@ -12,7 +12,7 @@ namespace Rn2OnAirMucicList.Controllers {
 		[HttpGet]
 		public ActionResult Index() {
 			var model = new RN2Feed();
-			model.GetFeed();
+			model.GetContext();
 			return View();
 		}
 

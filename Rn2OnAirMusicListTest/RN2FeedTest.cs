@@ -8,7 +8,8 @@ namespace Rn2OnAirMusicListTest {
 		[TestMethod]
 		public void RN2のフィードが取得できる() {
 			var rn2Feed = new RN2Feed();
-			rn2Feed.GetFeed();
+			rn2Feed.GetContext();
 		}
 	}
+
 }
